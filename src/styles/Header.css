@@ -1,0 +1,64 @@
+.custom-header {
+  width: 100%;
+  background: #ffffff;
+  padding: 0 40px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 64px;
+}
+
+/* LOGO STYLING */
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: 'Segoe UI', 'Poppins', 'Helvetica Neue', sans-serif;
+  letter-spacing: 1px;
+  user-select: none;
+}
+
+.logo a {
+  color: #1890ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.logo a span {
+  color: #1f1f1f;
+  font-weight: 600;
+}
+
+.logo a:hover {
+  color: #40a9ff;
+}
+
+/* MENU */
+.custom-menu {
+  background: transparent;
+  border-bottom: none;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.custom-menu .ant-menu-item {
+  margin: 0 12px;
+  transition: all 0.3s ease;
+}
+
+.custom-menu .ant-menu-item a {
+  color: #444;
+  transition: color 0.3s ease;
+}
+
+.custom-menu .ant-menu-item a:hover {
+  color: #1890ff;
+}
+
+.custom-menu .ant-menu-item-selected a {
+  color: #1890ff;
+  font-weight: 600;
+}
