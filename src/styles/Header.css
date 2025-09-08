@@ -1,42 +1,118 @@
 .custom-header {
   width: 100%;
-  background: linear-gradient(90deg, #ffffff 0%, #fafafa 100%);
+  background: linear-gradient(135deg, #111827, #1f2937);
   padding: 0 40px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 64px;
+  height: 70px;
   transition: all 0.3s ease;
+  overflow: hidden;
 }
 
-/* LOGO STYLING */
+/* Floating gradient background like Footer */
+.custom-header::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+      circle at 20% 30%,
+      rgba(59, 130, 246, 0.05),
+      transparent 70%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(147, 51, 234, 0.05),
+      transparent 70%
+    );
+  animation: floatBG 20s linear infinite;
+  z-index: 0;
+}
+
+@keyframes floatBG {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* LOGO */
 .logo {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 700;
-  font-family: 'Poppins', 'Segoe UI', 'Helvetica Neue', sans-serif;
+  font-family: "Poppins", "Segoe UI", "Helvetica Neue", sans-serif;
   letter-spacing: 1.2px;
-  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  z-index: 2; /* above floating background */
 }
 
 .logo a {
-  color: #1890ff;
+  color: #60a5fa;
   text-decoration: none;
-  transition: color 0.3s ease, transform 0.3s ease;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
 }
 
 .logo a span {
-  color: #1f1f1f;
-  font-weight: 600;
+  color: #f3f4f6;
 }
 
 .logo a:hover {
-  color: #40a9ff;
-  transform: translateY(-2px);
+  transform: scale(1.05) translateY(-2px);
+  color: #93c5fd;
+}
+
+/* Mini Icon */
+.logo-icon {
+  font-size: 26px;
+  color: #3b82f6;
+  transition: transform 0.3s ease;
+}
+
+.logo-icon:hover {
+  transform: rotate(15deg) scale(1.1);
+}
+
+/* Gradient under logo */
+.logo::before {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #3b82f6, #6366f1, #9333ea, #3b82f6);
+  border-radius: 4px;
+  animation: glowLine 3s ease-in-out infinite;
+}
+
+@keyframes glowLine {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* MENU */
@@ -45,34 +121,36 @@
   border-bottom: none;
   font-weight: 500;
   font-size: 16px;
+  position: relative;
+  z-index: 2; /* above floating background */
 }
 
 .custom-menu .ant-menu-item {
   margin: 0 14px;
   transition: all 0.3s ease;
-  border-radius: 6px;
-  padding: 0 10px !important;
+  border-radius: 8px;
+  padding: 0 12px !important;
 }
 
 .custom-menu .ant-menu-item a {
-  color: #444;
-  transition: color 0.3s ease, background 0.3s ease;
+  color: #d1d5db;
+  transition: all 0.3s ease;
 }
 
 .custom-menu .ant-menu-item:hover {
-  background: rgba(24, 144, 255, 0.05);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .custom-menu .ant-menu-item a:hover {
-  color: #1890ff;
+  color: #60a5fa;
 }
 
 .custom-menu .ant-menu-item-selected {
-  background: rgba(24, 144, 255, 0.08);
-  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
 }
 
 .custom-menu .ant-menu-item-selected a {
-  color: #1890ff;
+  color: #60a5fa;
   font-weight: 600;
 }

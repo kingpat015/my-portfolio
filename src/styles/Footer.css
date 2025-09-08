@@ -1,6 +1,6 @@
 .custom-footer {
   text-align: center;
-  padding: 24px 16px;
+  padding: 30px 16px;
   background: linear-gradient(135deg, #111827, #1f2937);
   color: #d1d5db;
   font-size: 14px;
@@ -9,27 +9,7 @@
   box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.3);
   letter-spacing: 0.3px;
   position: relative;
-}
-
-.custom-footer span {
-  color: #9ca3af;
-  transition: color 0.3s ease;
-}
-
-.custom-footer span:hover {
-  color: #3b82f6;
-}
-
-.custom-footer a {
-  color: #60a5fa;
-  margin-left: 6px;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.custom-footer a:hover {
-  color: #93c5fd;
-  text-decoration: underline;
+  overflow: hidden;
 }
 
 .custom-footer::before {
@@ -40,6 +20,96 @@
   transform: translateX(-50%);
   width: 60px;
   height: 3px;
-  background: linear-gradient(90deg, #3b82f6, #6366f1);
+  background: linear-gradient(90deg, #3b82f6, #6366f1, #9333ea, #3b82f6);
   border-radius: 4px;
+  animation: glowLine 3s ease-in-out infinite;
+}
+
+@keyframes glowLine {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.custom-footer span.brand {
+  color: #9ca3af;
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.custom-footer span.brand:hover {
+  color: #3b82f6;
+  transform: scale(1.05);
+}
+
+.custom-footer a {
+  color: #60a5fa;
+  margin-left: 6px;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.custom-footer a:hover {
+  color: #93c5fd;
+  transform: translateY(-2px) scale(1.05);
+  text-decoration: underline;
+}
+
+/* Social Icons */
+.social-icons {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  z-index: 2;
+  position: relative;
+}
+
+.social-icons a {
+  color: #d1d5db;
+  font-size: 18px;
+  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #3b82f6;
+  transform: scale(1.2) rotate(10deg);
+  text-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+}
+
+/* Subtle floating gradient overlay for extra life */
+.custom-footer::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+      circle at 20% 30%,
+      rgba(59, 130, 246, 0.05),
+      transparent 70%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(147, 51, 234, 0.05),
+      transparent 70%
+    );
+  animation: floatBG 20s linear infinite;
+  z-index: 0;
+}
+
+@keyframes floatBG {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
