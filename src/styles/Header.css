@@ -1,8 +1,8 @@
 .custom-header {
   width: 100%;
-  background: #ffffff;
+  background: linear-gradient(90deg, #ffffff 0%, #fafafa 100%);
   padding: 0 40px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -10,21 +10,23 @@
   top: 0;
   z-index: 1000;
   height: 64px;
+  transition: all 0.3s ease;
 }
 
 /* LOGO STYLING */
 .logo {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
-  font-family: 'Segoe UI', 'Poppins', 'Helvetica Neue', sans-serif;
-  letter-spacing: 1px;
+  font-family: 'Poppins', 'Segoe UI', 'Helvetica Neue', sans-serif;
+  letter-spacing: 1.2px;
   user-select: none;
 }
 
 .logo a {
   color: #1890ff;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
 }
 
 .logo a span {
@@ -34,6 +36,7 @@
 
 .logo a:hover {
   color: #40a9ff;
+  transform: translateY(-2px);
 }
 
 /* MENU */
@@ -45,17 +48,28 @@
 }
 
 .custom-menu .ant-menu-item {
-  margin: 0 12px;
+  margin: 0 14px;
   transition: all 0.3s ease;
+  border-radius: 6px;
+  padding: 0 10px !important;
 }
 
 .custom-menu .ant-menu-item a {
   color: #444;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+.custom-menu .ant-menu-item:hover {
+  background: rgba(24, 144, 255, 0.05);
 }
 
 .custom-menu .ant-menu-item a:hover {
   color: #1890ff;
+}
+
+.custom-menu .ant-menu-item-selected {
+  background: rgba(24, 144, 255, 0.08);
+  border-radius: 6px;
 }
 
 .custom-menu .ant-menu-item-selected a {
