@@ -4,7 +4,7 @@ import {
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
-  FaTelegramPlane,
+  // FaTelegramPlane,
   FaEnvelope,
 } from "react-icons/fa";
 
@@ -30,20 +30,32 @@ const Footer = () => {
         </p>
 
         <div className="social-icons">
-          <a href="https://facebook.com" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.facebook.com/aganosu.patto/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaFacebookF />
           </a>
-          <a href="mailto:youremail@gmail.com" target="_blank" rel="noreferrer">
+          <a
+            href="mailto:kingpatrickleimuel15@gmail.com"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaEnvelope />
           </a>
-          <a href="https://t.me/yourusername" target="_blank" rel="noreferrer">
+          {/* <a href="https://t.me/Patrick" target="_blank" rel="noreferrer">
             <FaTelegramPlane />
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noreferrer">
+          </a> */}
+          <a
+            href="https://www.instagram.com/kingpat015/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaInstagram />
           </a>
           <a
-            href="https://linkedin.com/in/yourprofile"
+            href="https://www.linkedin.com/in/patrick-leimuel-aganos-0a4609221/"
             target="_blank"
             rel="noreferrer"
           >
