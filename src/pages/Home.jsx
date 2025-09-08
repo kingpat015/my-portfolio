@@ -1,6 +1,7 @@
 import { Typography, Avatar, Button, Tag } from "antd";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import ProfileImg from "../assets/patrick_img.png";
 import "../styles/Home.css";
 
 const { Title, Paragraph } = Typography;
@@ -120,7 +121,7 @@ const Home = () => {
             animate={{ y: [0, -15, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           >
-            <Avatar size={400} src="/avatar.jpg" className="home-avatar" />
+            <Avatar size={400} src={ProfileImg} className="home-avatar" />
           </motion.div>
         </motion.div>
       </div>

@@ -10,7 +10,7 @@
 
 .home-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: center !important; /* <-- changed from space-between */
   align-items: center;
   max-width: 1200px;
   width: 100%;
@@ -63,19 +63,31 @@
 .home-avatar-wrapper {
   flex: 1;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
   position: relative;
   z-index: 1;
 }
 
 .home-avatar {
-  width: 100%;
-  max-width: 450px;
-  height: auto;
+  width: 400px; /* or max-width: 450px */
+  height: 400px; /* make it a perfect square */
   border-radius: 50%;
+  object-fit: cover; /* <-- ensures the image fills the circle */
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
 }
 
 .floating-avatar {
   display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .home-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .home-avatar-wrapper {
+    justify-content: center;
+  }
 }
