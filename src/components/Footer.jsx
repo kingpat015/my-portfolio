@@ -4,7 +4,7 @@ import {
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
-  // FaTelegramPlane,
+  FaTelegramPlane,
   FaEnvelope,
 } from "react-icons/fa";
 
@@ -44,9 +44,9 @@ const Footer = () => {
           >
             <FaEnvelope />
           </a>
-          {/* <a href="https://t.me/Patrick" target="_blank" rel="noreferrer">
+          <a href="https://t.me/Paxtrick015" target="_blank" rel="noreferrer">
             <FaTelegramPlane />
-          </a> */}
+          </a>
           <a
             href="https://www.instagram.com/kingpat015/"
             target="_blank"
